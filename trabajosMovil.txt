@@ -1,0 +1,150 @@
+Ejercicio 3
+fun main(args: Array<String>) {
+    var variableUno= (args[0].toInt())
+    var variableDos= (args[1].toInt())
+    
+    if(variableUno>variableDos){
+        println("Entre: $variableUno y $variableDos, el mayor es $variableUno" )
+    }else{
+        println("Entre: $variableDos y $variableUno, el mayor es $variableDos" )
+    }
+}
+
+Ejercicio 4
+fun main(args: Array<String>) {
+    var edad= (args[0].toInt())
+    if(edad<0){
+        println("Datos incorrectos" )
+    }else if(edad<=5){
+        println("Su etapa es: Infancia" )
+    }else if(edad<=11){
+        println("Su etapa es: Ninez" )
+    }else if(edad<=19){
+        println("Su etapa es: Adolescencia" )
+    }else if(edad<=30){
+        println("Su etapa es: Juventud" )
+    }else if(edad<=59){
+        println("Su etapa es: Adultez" )
+    }else if(edad<=120){
+        println("Su etapa es: Anciano" )
+    }else {
+        println("Datos incorrectos" )
+    }
+    
+}
+
+Ejercicio 5
+fun main(args: Array<String>) {
+    var pepino= (20*args[0].toInt())
+    var aguacate= (65*args[1].toInt())
+    var tomate= (4*args[2].toInt())
+    var nopales= (3*args[3].toInt())
+    var manzana= (20*args[4].toInt())
+    
+    println(mensaje(pepino.toInt(),aguacate.toInt(),tomate.toInt(),nopales.toInt(),manzana.toInt()));
+}
+
+fun costoPorProducto(costo:Int)=costo*0.30
+
+fun gastosOpercion(costo:Int)=costo*0.20
+
+fun ganaciaVendedor(costo:Int)=costo*0.50
+
+fun mensaje(unidadUno:Int,unidadDos:Int,unidadTres:Int,unidadCuatro:Int,unidadCinco:Int):String{
+    var costoFinal = unidadUno+unidadDos+unidadTres+unidadCuatro+unidadCinco
+    return "Total vendido: $costoFinal\nCosto por producto %30: "+costoPorProducto(costoFinal)+"\nGastos de operacion %20: "+gastosOpercion(costoFinal)+
+    "\nGanancia de vendedor %50: "+ganaciaVendedor(costoFinal)
+}
+
+Ejercicio 6
+fun main(args: Array<String>) {
+    var edad= (args[0].toInt())
+    println(etapa(edad))
+}
+fun etapa (edad:Int)=
+    if(edad<0){"Datos incorrectos"
+    }else if(edad<=5){"Su etapa es: Infancia" 
+    }else if(edad<=11){"Su etapa es: Ninez" 
+    }else if(edad<=19){"Su etapa es: Adolescencia" 
+    }else if(edad<=30){"Su etapa es: Juventud" 
+    }else if(edad<=59){"Su etapa es: Adultez" 
+    }else if(edad<=120){"Su etapa es: Anciano"
+    }else {"Datos incorrectos" 
+    }
+Ejercicio 7
+fun main(args: Array<String>) {
+    var edad= (args[0].toInt())
+    println(etapa(edad))
+}
+fun etapa (edad:Int)=
+    if(edad<0){"Datos incorrectos"
+    }else if(edad in 0..5){"Su etapa es: Infancia" 
+    }else if(edad in 6..11){"Su etapa es: Ninez" 
+    }else if(edad in 12..19){"Su etapa es: Adolescencia" 
+    }else if(edad in 20..30){"Su etapa es: Juventud" 
+    }else if(edad in 31..59){"Su etapa es: Adultez" 
+    }else if(edad in 60..120){"Su etapa es: Anciano"
+    }else {"Datos incorrectos" 
+    }
+Ejercicio 8
+fun main(args: Array<String>) {
+    var calificacion= (args[0].toInt())
+    println(evaluar(calificacion))
+    println("\n"+aprobatorio(calificacion))
+}
+fun evaluar (calificacion:Int)=
+    if(calificacion in 0..59){"Insuficiente" 
+    }else if(calificacion in 60..69){"Suficiente" 
+    }else if(calificacion in 70..79){"Regular" 
+    }else if(calificacion in 80..89){"Muy bien" 
+    }else if(calificacion in 90..100){"Excelente" 
+    }else {"Datos incorrectos" 
+    }
+fun aprobatorio (calificacion:Int)=
+    if(calificacion in 0..59){"No aprobado" 
+    }else if(calificacion in 60..100){"Aprobado" 
+    }else {"Datos incorrectos" 
+    }
+Ejercicio 9
+fun main(args: Array<String>) {
+    var edad= (args[0].toInt())
+    println(etapa(edad))
+}
+fun etapa (edad:Int):String{
+    val mensaje = when(edad){
+        in 0..5 -> "Su etapa es: Infancia" 
+        in 6..11 -> "Su etapa es: Ninez" 
+        in 12..19 -> "Su etapa es: Adolescencia" 
+        in 20..30 -> "Su etapa es: Juventud" 
+        in 31..59 -> "Su etapa es: Adultez" 
+        in 60..120 -> "Su etapa es: Anciano"
+        else -> "No sirve"
+    }
+    return mensaje
+}
+Ejercicio 10
+fun main(args: Array<String>) {
+    var calificacion= (args[0].toInt())
+    println(evaluar(calificacion))
+    println("\n"+aprobatorio(calificacion))
+}
+fun evaluar (calificacion:Int):String{
+    val mensaje = when(calificacion){
+        in 0..59 -> "Insuficiente" 
+        in 60..69 -> "Suficiente"  
+        in 70..79 -> "Regular" 
+        in 80..89 -> "Muy bien" 
+        in 90..100 ->  "Excelente"
+        else -> "No sirve"
+    }
+    return mensaje
+}
+
+fun aprobatorio (calificacion:Int):String{
+    val mensaje = when(calificacion){
+        in 0..59 -> "No aprobado"
+        in 60..100 -> "Aprobado" 
+        else -> "Datos incorrectos" 
+    }
+   return mensaje
+}
