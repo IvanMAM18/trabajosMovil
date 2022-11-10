@@ -148,3 +148,20 @@ fun aprobatorio (calificacion:Int):String{
     }
    return mensaje
 }
+Ejercicio 14
+fun main(args: Array<String>) {
+    var cadena= args[0].toString()
+    println(evaluar(cadena))
+}
+fun evaluar(cadena:String):String{
+    var i=0
+    var j=0
+    var mensaje=""
+    while(i<cadena.length){
+        if(cadena[i].toString()==cadena[j].toString()) mensaje="no es heterograma" 
+        else j=i; mensaje="heterograma"
+        
+        i++
+    }
+    return mensaje
+}
